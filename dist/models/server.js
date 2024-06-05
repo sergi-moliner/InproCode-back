@@ -18,6 +18,7 @@ const cors_1 = __importDefault(require("cors"));
 const user_1 = __importDefault(require("../routes/user"));
 const connection_1 = __importDefault(require("../db/connection"));
 const markers_1 = __importDefault(require("../routes/markers"));
+const event_1 = __importDefault(require("../routes/event"));
 class Server {
     constructor() {
         this.port = process.env.PORT || '3001';
@@ -40,6 +41,7 @@ class Server {
         });
         this.app.use('/api/users', user_1.default);
         this.app.use('/api/markers', markers_1.default);
+        this.app.use('/api/events', event_1.default);
     }
     middlewares() {
         this.app.use(express_1.default.json());

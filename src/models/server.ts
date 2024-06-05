@@ -3,6 +3,7 @@ import cors from 'cors';
 import routesUser from '../routes/user';
 import db from '../db/connection';
 import routesMarkers from '../routes/markers';
+import routesEvent from '../routes/event';
 
 
 export class Server {
@@ -32,6 +33,7 @@ export class Server {
     });
     this.app.use('/api/users', routesUser);
     this.app.use('/api/markers', routesMarkers);
+    this.app.use('/api/events', routesEvent);
   }
 
   middlewares(){
