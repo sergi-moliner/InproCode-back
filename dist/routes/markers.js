@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const markers_1 = require("../controllers/markers");
+const router = (0, express_1.Router)();
+router.get('/', markers_1.getMarkers);
+router.post('/', markers_1.createMarker);
+router.delete('/', markers_1.deleteAllMarkers);
+router.get('/category/:category', markers_1.getMarkersByCategory);
+exports.default = router;
