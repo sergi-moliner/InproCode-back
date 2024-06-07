@@ -11,9 +11,9 @@ export const getEvents = async (req: Request, res: Response) => {
 };
 
 export const createEvent = async (req: Request, res: Response) => {
-  const { title, date, color } = req.body;
+  const { title, date, color, type } = req.body;
   try {
-    const event = await Event.create({ title, date, color });
+    const event = await Event.create({ title, date, color, type });
     res.json(event);
   } catch (error) {
     res.status(500).json({ error: 'Error creating event' });
@@ -22,11 +22,11 @@ export const createEvent = async (req: Request, res: Response) => {
 
 export const updateEvent = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { title, date, color } = req.body;
+  const { title, date, color, type } = req.body;
   try {
     const event = await Event.findByPk(id);
     if (event) {
-      await event.update({ title, date, color });
+      await event.update({ title, date, color, type });
       res.json(event);
     } else {
       res.status(404).json({ error: 'Event not found' });

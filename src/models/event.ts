@@ -18,6 +18,10 @@ const Event = db.define('Event', {
   color: {
     type: DataTypes.STRING,
     allowNull: false
+  },
+  type: {
+    type: DataTypes.STRING,
+    allowNull: false,
   }
 }, {
   tableName: 'events',

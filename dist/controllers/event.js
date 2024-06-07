@@ -25,9 +25,9 @@ const getEvents = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.getEvents = getEvents;
 const createEvent = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { title, date, color } = req.body;
+    const { title, date, color, type } = req.body;
     try {
-        const event = yield event_1.default.create({ title, date, color });
+        const event = yield event_1.default.create({ title, date, color, type });
         res.json(event);
     }
     catch (error) {
@@ -37,11 +37,11 @@ const createEvent = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
 exports.createEvent = createEvent;
 const updateEvent = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
-    const { title, date, color } = req.body;
+    const { title, date, color, type } = req.body;
     try {
         const event = yield event_1.default.findByPk(id);
         if (event) {
-            yield event.update({ title, date, color });
+            yield event.update({ title, date, color, type });
             res.json(event);
         }
         else {

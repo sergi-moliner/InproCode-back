@@ -22,6 +22,10 @@ const Event = connection_1.default.define('Event', {
     color: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false
+    },
+    type: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
     }
 }, {
     tableName: 'events',
