@@ -1,8 +1,10 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('inprocode', 'root', 'xxxxx', {
+const sequelize = new Sequelize('inprocode', 'root', 'XXXXX', {
     host: 'localhost',
-    dialect: 'mysql'
+    dialect: 'mysqli',
+    allowNull: false,
+
 });
 
 export default sequelize;
