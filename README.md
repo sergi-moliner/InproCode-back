@@ -47,6 +47,10 @@ Please clone each repository and follow the specific instructions provided below
     DB_NAME=inprocode
     PORT=3000
     ```
+5. Compile the TypeScript code:
+    ```bash
+    tsc
+    ```
 
 4. Run the backend server:
     ```bash
